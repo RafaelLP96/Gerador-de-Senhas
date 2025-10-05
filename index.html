@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de senhas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <span></span>
+
+      <h1>Bem-vindo ao gerador de senhas!</h1>
+      <button
+        title="Trocar esquema de cor."
+        type="button"
+        class="button"
+        id="swaptheme"
+      >
+        <img
+          src="assets/images/day-and-night.png"
+          alt="swap colors icon"
+          srcset=""
+        />
+      </button>
+    </header>
+
+    <div class="general-container">
+      <div class="toggle">
+        <div class="checkboxdiv">
+          <input
+            class="toggle-input"
+            type="checkbox"
+            name="check"
+            id="check"
+            title="Exige mesma quantidade de tipos"
+            checked
+            
+          />
+          <label for="check" class="switch"><span class="span-switch"></span></label>
+          
+        </div>
+        <label class="button-title">Alternar tipos(recomendado)</label>
+        <p>Garante ter todos os tipos sem repetir</p>
+      </div>
+
+      <div class="p-ct1">
+        <p>Escolha a quantia dos caracteres</p>
+      </div>
+      <div class="container1">
+        <label class="inp">
+          <p>Quantidade de letras minusculas</p>
+          <input
+            type="number"
+            name="quantitylower"
+            id="quantitylower"
+            onclick="gerar(0)"
+            value="5"
+            min="1"
+            max="26"
+            step="1"
+            disabled
+          />
+        </label>
+
+        <label class="inp">
+          <p>Quantidade de letras maiusculas</p>
+          <input
+            type="number"
+            name="quantityupper"
+            id="quantityupper"
+            onclick="gerar(0)"
+            value="5"
+            min="1"
+            max="26"
+            step="1"
+            disabled
+          />
+        </label>
+
+        <label class="inp">
+          <p>Quantidade de numeros</p>
+          <input
+            type="number"
+            name="quantitynumber"
+            id="quantitynumber"
+            onclick="gerar(0)"
+            value="5"
+            min="1"
+            max="9"
+            step="1"
+            disabled
+          />
+        </label>
+
+        <label class="inp">
+          <p>Quantidade de especiais</p>
+          <input
+            type="number"
+            name="quantityespecial"
+            id="quantityespecial"
+            onclick="gerar(0)"
+            value="5"
+            min="1"
+            max="22"
+            step="1"
+            disabled
+          />
+        </label>
+      </div>
+
+      <div class="p-ct2">
+        <p>Detalhes configurados</p>
+      </div>
+      <div class="container2">
+        <div class="inp">
+          <p>Total de caracteres</p>
+          <input
+            type="number"
+            name="total"
+            id="total"
+            value="20"
+            min="4"
+            max="30"
+          />
+          <div class="rad">
+            <div id="lower">
+              <label type="radio" name="lower" id="1">Minusculas</label>
+            </div>
+
+            <div id="upper">
+              <label type="radio" name="upper" id="2">Maiusculas</label>
+            </div>
+
+            <div id="number">
+              <label type="radio" name="number" id="3">Numeros</label>
+            </div>
+
+            <div id="especial">
+              <label name="especial" id="4">Simbolos</label>
+            </div>
+
+            <div id="alternate">
+              <label type="radio" name="alternate" id="5"
+                >Tipos alternados</label
+              >
+            </div>
+
+            <div id="lenght">
+              <label type="radio" name="lenght" id="6">Tamanho minimo</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-ct3">
+        <p>Resultado</p>
+      </div>
+
+      <div class="container3">
+        
+          <p>Clique para gerar e copie sua nova senha</p>
+
+          <div id="input-container class="input-container"">
+            <input
+              type="password"
+              placeholder="vai aparecer aqui."
+              name="password"
+              id="password"
+              size="50"
+            />
+            <button type="pass_button" id="pass_button" class="pass-button">
+              Monstrar senha
+            </button>
+          </div>
+          <button
+            type="button"
+            class="button"
+            onclick="gerar(1)"
+            title="Gerar senha"
+          >
+            Gerar Senha
+          </button>
+          <button
+            type="button"
+            id="copy_button"
+            class="button"
+            onclick="clipboard()"
+            title="Copiar para área e transferência."
+          >
+            Copiar
+          </button>
+        
+      </div>
+
+      <div class="p-ct4">
+        <p>Dicas</p>
+      </div>
+      <div class="container4">
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-item">
+              Use senhas longas e únicas. <br />Pelo menos 12 caracteres,
+              misturando maiúsculas, minúsculas, números e símbolos.
+            </div>
+
+            <div class="carousel-item">
+              Deixe o "Alternar" ligado antes de gerar a senha para deixa-la mais segura.
+              <br />Isso garante que a senha gerada tenha a mesma quantidade de
+              tipos de caracteres de cada tipo.
+            </div>
+            <div class="carousel-item">
+              Combine números, letras e símbolos, mas não as deixem de maneira
+              obvia. <br />Por exemplo: "senha123!@#" ou usar o proprio nome com
+              a data de nascimento.
+            </div>
+            <div class="carousel-item">
+              Evite entrar logar em sites usando wifi público. <br />Hackers
+              podem rastrear suas credenciais, porém usar VPN nessas redes
+              tornam a conexão mais segura.
+            </div>
+            <div class="carousel-item">
+              Você pode baixar um gerenciador de senhas. <br />Eles
+              armazenam suas senhas diferentes de forma segura em vários sites.
+            </div>
+            <div class="carousel-item">
+              Use autenticação de dois fatores (2FA) sempre que disponível.<br>
+              Isso adiciona uma camada extra de segurança, exigindo um código
+              temporário além da senha.
+            </div>
+            <div class="carousel-item">
+              Não reutilize senhas em diferentes contas. <br/>Se uma conta for
+              comprometida, as demais também podem sofrer invasão.
+            </div>
+            <div class="carousel-item">
+              Desconfie de e-mails ou mensagens suspeitas. <br />Nunca clique em
+              links desconhecidos ou forneça informações pessoais sem verificar
+              a autenticidade do remetente.
+            </div>
+            <div class="carousel-item">
+              Mantenha seu software e dispositivos atualizados. <br />As
+              atualizações frequentemente incluem correções de segurança
+              importantes.
+            </div>  
+          </div>
+          <div class="carousel-controls">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      This website is in WIP, and may be changed... by Rafael Lima. Contact:      <span id="social-media">
+        <img src="assets/images/github-logo.png"
+         width="40" alt="github-link" srcset=""
+         onclick="window.open('https://github.com/RafaelLP96')" />
+
+        <img src="assets/images/linkedin-icon.png"
+         width="40" alt="Linkedin-link" srcset="" 
+         onclick="window.open('https://www.linkedin.com/in/rafaelpacheco96');" />
+      </span>
+
+    <script src="./assets/js/main.js" type="module"></script>
+  </body>
+</html>
