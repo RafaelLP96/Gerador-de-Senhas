@@ -1,6 +1,6 @@
 # 🔐 Gerador de Senhas
 
-[🇺🇸 Read in English](README_EN.md)
+[🇺🇸 Read in English](README.en.md)
 
 
 Um **gerador de senhas interativo** desenvolvido em **HTML, CSS e JavaScript**, com foco em personalização, segurança e uma interface moderna.  
