@@ -5,6 +5,7 @@
 
 Um **gerador de senhas interativo** desenvolvido em **HTML, CSS e JavaScript**, com foco em personalização, segurança e uma interface moderna.  
 O usuário pode configurar o tipo de caracteres, alternar temas (claro/escuro) e visualizar a força da senha em tempo real.
+Ideal para usar em conjunto do seu gerenciador de senhas preferido, por ser um gerador de caracteres aleatorios.
 
 🌐 **Acesse o projeto online:**  
 👉 [https://rafaellp96.github.io/Gerador-de-Senhas/](https://rafaellp96.github.io/Gerador-de-Senhas/)
@@ -19,6 +20,7 @@ O usuário pode configurar o tipo de caracteres, alternar temas (claro/escuro) e
 - 📊 Indicador de força da senha em tempo real  
 - 📋 Botão para copiar a senha para a área de transferência  
 - 🧭 Interface intuitiva e totalmente responsiva
+- 👀 Varias dicas para te lembrar como se manter seguro
 
 ---
 
@@ -42,6 +44,15 @@ Durante o desenvolvimento deste projeto, exercitei:
 - Uso de eventos e funções reutilizáveis
 - Manipulação dinamica de string entre diferentes tipos de caracteres
 - Estruturação de projeto para publicação no **GitHub Pages**
+
+---
+
+## 💡 Senhas sem repetir caracteres e sem repetir tipos
+
+Este gerador evita repetições consecutivas de caracteres ou tipos de caracteres, conforme demonstrado por Park et al. (2023), que apontam que padrões repetitivos reduzem a entropia e tornam senhas mais previsíveis em ataques automatizados.
+
+fonte: Park, S., Kim, D., & Liao, Y. (2023). Evaluating Password Composition Policy and Repetitive Characters. University of Tennessee, UserLab.
+🔗[Disponível aqui](https://userlab.utk.edu/files/papers/kim/2023/park2023demystifying.pdf)
 
 ---
 
